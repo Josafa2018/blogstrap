@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   resources :products
   resources :products
   resources :products
@@ -54,4 +55,6 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     #   end
+  get '/articles', to: 'articles#index'
+  root 'articles#index'
 end
