@@ -2,7 +2,17 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <%= article.title %>
+      <a href="/articles/<%= article.id %>">
+        <%= article.title %> usando routes get /articles/:id 
+      </a>
+    </li>
+    <li>
+      <a href="<%= article_path(article.id) %>">
+        <%= article.title %> usando resources :articles em routes
+      </a>
+    </li>
+    <li>
+      <%= link_to article.title+' usando link_to', article %>
     </li>
     <% end %>
 </ul>
